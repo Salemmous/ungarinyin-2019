@@ -82,16 +82,20 @@
                 .sort(
                     (
                         {
+                            Page: aPage,
                             Geometry: {
                                 BoundingBox: { Top: aTop, Left: aLeft }
                             }
                         },
                         {
+                            Page: bPage,
+
                             Geometry: {
                                 BoundingBox: { Top: bTop, Left: bLeft }
                             }
                         }
                     ) =>
+                        bPage - aPage ||
                         Math.floor(aTop * precision) -
                             Math.floor(bTop * precision) ||
                         Math.floor(aLeft * precision) -
