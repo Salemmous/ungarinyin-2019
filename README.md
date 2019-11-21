@@ -6,7 +6,7 @@ This file actually just sends the documents stored in `Typescripts`in the given 
 
 ## `OCRProcessed`
 
-AWS Lambda function triggered by the SNS notification produced by Textract. It stores the resuls in the `OCR` folder of the S3 bucket.
+AWS Lambda function triggered by the SNS notification produced by Textract. It stores the results in the `OCR` folder of the S3 bucket.
 
 ## `ocr_results_corrector`
 
