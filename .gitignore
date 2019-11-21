@@ -1,0 +1,7 @@
+node_modules
+function.zip
+yarn.lock
+.env
+__pycache__
+.vscode
+accessKeys.csv

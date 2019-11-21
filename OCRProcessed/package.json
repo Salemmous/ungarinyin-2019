@@ -1,0 +1,9 @@
+{
+    "dependencies": {
+        "aws-sdk": "^2.564.0"
+    },
+    "scripts": {
+        "deploy:aws": "aws lambda update-function-code --function-name UngarinyinTextractReady --zip-file fileb://function.zip --region us-east-1",
+        "deploy": "rm -f function.zip && zip -r function.zip . && npm run deploy:aws"
+    }
+}
