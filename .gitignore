@@ -5,3 +5,5 @@ yarn.lock
 __pycache__
 .vscode
 accessKeys.csv
+audio
+audio_sliced
