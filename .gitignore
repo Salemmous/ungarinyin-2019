@@ -7,3 +7,4 @@ __pycache__
 accessKeys.csv
 audio
 audio_sliced
+vocabulary_maker/credentials.json
