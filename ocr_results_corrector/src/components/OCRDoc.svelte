@@ -22,7 +22,7 @@
     let changed = false;
     let saving = false;
 
-    const precision = 100;
+    const precision = 90;
 
     $: pageContent =
         content &&
