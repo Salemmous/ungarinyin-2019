@@ -22,7 +22,7 @@
     let changed = false;
     let saving = false;
 
-    const precision = 90;
+    const precision = 55;
 
     $: pageContent =
         content &&
@@ -32,19 +32,29 @@
                 (
                     {
                         Geometry: {
-                            BoundingBox: { Top: aTop, Left: aLeft }
+                            BoundingBox: {
+                                Top: aTop,
+                                Height: aHeight,
+                                Left: aLeft,
+                                Width: aWidth
+                            }
                         }
                     },
                     {
                         Geometry: {
-                            BoundingBox: { Top: bTop, Left: bLeft }
+                            BoundingBox: {
+                                Top: bTop,
+                                Height: bHeight,
+                                Left: bLeft,
+                                Width: bWidth
+                            }
                         }
                     }
                 ) =>
-                    Math.floor(aTop * precision) -
-                        Math.floor(bTop * precision) ||
-                    Math.floor(aLeft * precision) -
-                        Math.floor(bLeft * precision)
+                    Math.floor((aTop + aHeight / 2) * precision) -
+                        Math.floor((bTop + bHeight / 2) * precision) ||
+                    Math.floor((aLeft + aWidth / 2) * precision) -
+                        Math.floor((bLeft + bWidth / 2) * precision)
             );
 
     const fetchUrl = async name => {
