@@ -7,7 +7,7 @@ __pycache__
 accessKeys.csv
 audio
 audio_sliced
-vocabulary_maker/credentials.json
+credentials.json
 vocab.json
 dv
 .DS_Store
