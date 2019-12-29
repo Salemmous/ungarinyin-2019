@@ -45,7 +45,7 @@ async function main() {
                         .replace(/^\((.*)\)$/, (_, word) => word)
                         .replace(/^"(.*)"$/, (_, word) => word)
                         .replace("ŋ", "ng")
-                        .replace(/[^a-zA-Z]/g, " ")
+                        .replace(/[^a-zA-Z]/, " ")
                         .trim()
                 )
                 .reduce(
@@ -58,10 +58,16 @@ async function main() {
                                     word.length > 1 &&
                                     word.match(/a|e|i|o|u/)
                             )
-                            .reduce((acc, cur) => acc.add(cur.trim()), acc),
+                            .reduce(
+                                (acc, cur) => ({
+                                    ...acc,
+                                    [cur]: (acc[cur] || 0) + 1
+                                }),
+                                acc
+                            ),
                     acc
                 ),
-        new Set()
+        {}
     );
     console.log("Words iterated!");
     console.log("Writing results to file...");
